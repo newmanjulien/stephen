@@ -1,7 +1,7 @@
 export const BRANDING = {
-	appName: 'Overbase',
+	appName: 'Stephen',
 	logoUrl: '/logo.png',
-	logoAlt: 'Overbase logo'
+	logoAlt: 'Stephen logo'
 } as const;
 
 export const DEFAULT_BROKER = {
