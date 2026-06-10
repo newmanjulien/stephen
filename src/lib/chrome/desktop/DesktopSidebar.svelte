@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { ChevronsUpDown } from 'lucide-svelte';
 	import DesktopNavList from '$lib/chrome/desktop/DesktopNavList.svelte';
 	import { DEFAULT_BROKER } from '$lib/chrome/shared/branding';
 	import { cn } from '$lib/chrome/shared/cn';
@@ -13,6 +12,7 @@
 	} from '$lib/chrome/shared/nav';
 	import { useChromeShellState } from '$lib/chrome/shared/shell.svelte';
 	import { sidebarIndicator } from '$lib/chrome/shared/sidebar-indicator';
+	import { AccountSwitcherIcon } from '$lib/icons/app-icons';
 
 	type Props = {
 		currentPathname: string;
@@ -56,7 +56,7 @@
 		>
 			<div class="inline-flex h-6 origin-center scale-110 items-center gap-1 rounded-full border border-zinc-100 bg-zinc-50 px-1 text-zinc-100">
 				<PersonAvatar person={DEFAULT_BROKER} size={20} class="border border-zinc-100 bg-white" />
-				<ChevronsUpDown aria-hidden="true" class="h-3 w-3 text-zinc-400" />
+				<AccountSwitcherIcon aria-hidden="true" class="h-3 w-3 text-zinc-400" />
 			</div>
 		</div>
 	</div>

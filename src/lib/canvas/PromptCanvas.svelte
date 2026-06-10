@@ -5,7 +5,7 @@
 		PromptCanvasTrainer
 	} from '$lib/canvas/types';
 	import PromptCanvasRail from '$lib/canvas/PromptCanvasRail.svelte';
-	import { ArrowUp, CircleQuestionMark, Plus } from 'lucide-svelte';
+	import { AddIcon, HelpIcon, SubmitIcon } from '$lib/icons/app-icons';
 
 	type Props = {
 		heading: string;
@@ -87,7 +87,7 @@
 
 <div class="prompt-canvas-layout grid min-h-full grid-cols-1">
 	<section class="flex h-full min-h-full w-full items-center justify-center px-4 py-6 md:px-8 md:py-8">
-		<div class="flex w-full max-w-[43rem] flex-col items-center">
+		<div class="flex w-full max-w-172 flex-col items-center">
 			<h1 class="mb-10 text-center text-[1.4rem] leading-tight tracking-[-0.02em] text-zinc-900">
 				{heading}
 			</h1>
@@ -125,7 +125,7 @@
 							aria-hidden="true"
 							class="pointer-events-none absolute -inset-2 rounded-full transition-colors group-hover:bg-zinc-100"
 						></span>
-						<Plus class="relative size-4 stroke-[2.25]" />
+						<AddIcon class="relative size-4" />
 					</button>
 
 					<div class="flex items-center">
@@ -136,7 +136,7 @@
 							disabled={!canSubmit}
 							title={!onSubmit ? 'Not available yet' : undefined}
 						>
-							<ArrowUp class="size-3.75 stroke-[2.4]" />
+							<SubmitIcon class="size-3.75" />
 						</button>
 					</div>
 				</div>
@@ -152,7 +152,7 @@
 								applySuggestion(suggestion);
 							}}
 						>
-							<CircleQuestionMark class="size-3.5 shrink-0 text-zinc-500" />
+							<HelpIcon class="size-3.5 shrink-0 text-zinc-500" />
 							<span>{suggestion}</span>
 						</button>
 

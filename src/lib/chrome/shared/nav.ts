@@ -1,4 +1,3 @@
-import { CircleQuestionMark } from 'lucide-svelte';
 import {
 	DEFAULT_ROUTE_ID,
 	ROUTE_REGISTRY,
@@ -8,6 +7,7 @@ import {
 	type NavRouteId,
 	type NavSectionId
 } from '$lib/routes/route-registry';
+import { HelpIcon } from '$lib/icons/app-icons';
 
 type NavIcon = AppRouteDefinition['icon'];
 
@@ -67,7 +67,7 @@ export const NAV_FOOTER_ITEMS: readonly NavFooterItem[] = [
 		id: 'contact-support',
 		kind: 'disabled',
 		label: 'Contact support',
-		icon: CircleQuestionMark
+		icon: HelpIcon
 	}
 ] as const;
 

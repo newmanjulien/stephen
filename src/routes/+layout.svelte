@@ -17,7 +17,10 @@
 
 	const shellState = $state<ChromeShellState>({
 		isSidebarExpanded: false,
-		isMobileDrawerOpen: false
+		isMobileDrawerOpen: false,
+		toggleSidebar() {
+			shellState.isSidebarExpanded = !shellState.isSidebarExpanded;
+		}
 	});
 
 	provideChromeShellState(shellState);

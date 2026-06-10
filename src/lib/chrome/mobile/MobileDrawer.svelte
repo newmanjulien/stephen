@@ -1,9 +1,9 @@
 <script lang="ts">
 	import MobileNavList from '$lib/chrome/mobile/MobileNavList.svelte';
-	import { X } from 'lucide-svelte';
 	import HomeLink from '$lib/chrome/shared/HomeLink.svelte';
 	import { NAV_FOOTER_ITEMS, NAV_SECTIONS } from '$lib/chrome/shared/nav';
 	import { useChromeShellState } from '$lib/chrome/shared/shell.svelte';
+	import { CloseIcon } from '$lib/icons/app-icons';
 
 	type Props = {
 		currentPathname: string;
@@ -30,7 +30,7 @@
 						shellState.isMobileDrawerOpen = false;
 					}}
 				>
-					<X class="size-4" />
+					<CloseIcon class="size-4" />
 				</button>
 			</header>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Menu } from 'lucide-svelte';
 	import HomeLink from '$lib/chrome/shared/HomeLink.svelte';
 	import { useChromeShellState } from '$lib/chrome/shared/shell.svelte';
+	import { MenuIcon } from '$lib/icons/app-icons';
 
 	type Props = {
 		title: string;
@@ -29,7 +29,7 @@
 				shellState.isMobileDrawerOpen = !shellState.isMobileDrawerOpen;
 			}}
 		>
-			<Menu class="size-4" />
+			<MenuIcon class="size-4" />
 		</button>
 	</div>
 </header>

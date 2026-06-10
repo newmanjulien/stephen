@@ -1,4 +1,3 @@
-import { CloudRainWind, CircleQuestionMark, Droplets, MailWarning, TreePine } from 'lucide-svelte';
 import {
 	CATEGORIES,
 	CATEGORY_IDS,
@@ -6,12 +5,10 @@ import {
 	POLICY_IDS,
 	getPolicy,
 	type CategoryId,
-	type PolicyIconId,
 	type PolicyId
 } from '$lib/demo-data';
+import { POLICY_ICON_MAP, type AppIcon } from '$lib/icons/app-icons';
 import { getRouteNavLabel, getRouteTitle } from '$lib/routes/route-metadata';
-
-type NavIcon = typeof CircleQuestionMark;
 
 export type NavSectionId = CategoryId;
 export type NavRouteId = PolicyId;
@@ -32,15 +29,8 @@ export type AppRouteDefinition = {
 	navLabel: string;
 	headerTitle: string;
 	title: string;
-	icon: NavIcon;
+	icon: AppIcon;
 };
-
-const ROUTE_ICON_MAP = {
-	'cloud-rain-wind': CloudRainWind,
-	droplets: Droplets,
-	'mail-warning': MailWarning,
-	'tree-pine': TreePine
-} as const satisfies Record<PolicyIconId, NavIcon>;
 
 function createRouteDefinition(routeId: NavRouteId): AppRouteDefinition {
 	const route = getPolicy(routeId);
@@ -51,7 +41,7 @@ function createRouteDefinition(routeId: NavRouteId): AppRouteDefinition {
 		navLabel: getRouteNavLabel(route),
 		headerTitle: getRouteNavLabel(route),
 		title: getRouteTitle(route),
-		icon: ROUTE_ICON_MAP[route.iconId]
+		icon: POLICY_ICON_MAP[route.iconId]
 	};
 }
 

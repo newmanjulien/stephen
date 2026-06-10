@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { PanelLeft } from 'lucide-svelte';
+	import SidebarSimpleIcon from 'phosphor-svelte/lib/SidebarSimpleIcon';
 	import { useChromeShellState } from '$lib/chrome/shared/shell.svelte';
+	import { FloatingTooltip, IconButton } from '$lib/ui';
 
 	type Props = {
 		title: string;
@@ -8,20 +9,35 @@
 
 	let { title }: Props = $props();
 	const shellState = useChromeShellState();
+	const sidebarToggleTooltipText = $derived(
+		shellState.isSidebarExpanded ? 'Close sidebar' : 'Open sidebar'
+	);
 </script>
 
-<header class="hidden h-11 items-center border-b border-zinc-100 bg-white px-4 md:flex">
+<header class="hidden h-11 items-center border-b border-zinc-100 bg-white pl-1 pr-4 md:flex">
 	<div class="flex min-w-0 flex-1 items-center">
-		<button
-			type="button"
-			aria-label="Toggle sidebar"
-			class="mr-1 ml-1 inline-flex items-center text-xs font-medium tracking-wide text-zinc-500 transition-colors hover:text-zinc-400"
-			onclick={() => {
-				shellState.isSidebarExpanded = !shellState.isSidebarExpanded;
-			}}
+		<FloatingTooltip
+			id="desktop-sidebar-toggle-tooltip"
+			text={sidebarToggleTooltipText}
+			placement="bottom"
+			maxWidth={104}
+			fitContent
+			panelClass="whitespace-nowrap border-stone-200 bg-stone-100 px-2 py-1 text-[0.68rem] leading-none font-medium text-stone-700 shadow-sm shadow-stone-950/5"
 		>
-			<PanelLeft class="h-3.5 w-3.5" />
-		</button>
+			{#snippet trigger({ describedBy })}
+				<IconButton
+					aria-label={sidebarToggleTooltipText}
+					aria-describedby={describedBy}
+					variant="ghost"
+					class="mr-1 ml-1 size-7 text-stone-500 hover:bg-stone-100 hover:text-stone-700 focus-visible:bg-stone-100 focus-visible:text-stone-700 focus-visible:ring-2 focus-visible:ring-stone-300"
+					onclick={() => {
+						shellState.toggleSidebar();
+					}}
+				>
+					<SidebarSimpleIcon size={14} weight="regular" />
+				</IconButton>
+			{/snippet}
+		</FloatingTooltip>
 
 		<p class="min-w-0 truncate text-xs font-medium tracking-wide text-zinc-500">{title}</p>
 	</div>
