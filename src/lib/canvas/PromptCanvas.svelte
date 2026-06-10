@@ -106,7 +106,7 @@
 							rows={1}
 							aria-label="Prompt input"
 							placeholder={DEFAULT_PROMPT_PLACEHOLDER}
-							class="prompt-input w-full resize-none overflow-hidden border-0 bg-transparent p-0 text-[0.84rem] leading-[1.38] text-zinc-800 outline-none placeholder:font-normal placeholder:text-zinc-400 md:text-[0.9rem]"
+							class="prompt-input w-full resize-none overflow-hidden border-0 bg-transparent p-1 text-xs leading-[1.38] text-zinc-800 outline-none placeholder:text-sm placeholder:font-normal placeholder:text-zinc-400 md:text-sm"
 						></textarea>
 					</div>
 

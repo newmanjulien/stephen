@@ -47,7 +47,7 @@ function createDocumentsNote(policy: PolicyRecord) {
 }
 
 function createPromptInitialValue(policy: PolicyRecord) {
-  return `What does a ${getPolicyDisplayName(policy)} policy cover? And why would Exterra need this specifically?`;
+  return `What does a ${getPolicyDisplayName(policy)} policy cover? And why would Exterra need this?`;
 }
 
 export function createPromptCanvasRouteContent(
