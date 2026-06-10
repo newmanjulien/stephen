@@ -1,5 +1,5 @@
 export const BRANDING = {
-  appName: "Overbase",
+  appName: "Overbase SAMPLE",
   logoUrl: "/logo.png",
   logoAlt: "Overbase logo",
 } as const;
