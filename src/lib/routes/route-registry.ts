@@ -1,15 +1,4 @@
-import {
-	BadgeAlert,
-	CloudRainWind,
-	CircleQuestionMark,
-	Droplets,
-	House,
-	Megaphone,
-	Package,
-	Signature,
-	TreePine,
-	Wrench
-} from 'lucide-svelte';
+import { CloudRainWind, CircleQuestionMark, Droplets, MailWarning, TreePine } from 'lucide-svelte';
 import {
 	CATEGORIES,
 	CATEGORY_IDS,
@@ -47,15 +36,10 @@ export type AppRouteDefinition = {
 };
 
 const ROUTE_ICON_MAP = {
-	'badge-alert': BadgeAlert,
 	'cloud-rain-wind': CloudRainWind,
 	droplets: Droplets,
-	house: House,
-	megaphone: Megaphone,
-	package: Package,
-	signature: Signature,
-	'tree-pine': TreePine,
-	wrench: Wrench
+	'mail-warning': MailWarning,
+	'tree-pine': TreePine
 } as const satisfies Record<PolicyIconId, NavIcon>;
 
 function createRouteDefinition(routeId: NavRouteId): AppRouteDefinition {

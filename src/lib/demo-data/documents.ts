@@ -8,9 +8,8 @@ export type DocumentRecord = {
 };
 
 const SECONDARY_DOCUMENT_SUFFIXES: Record<CategoryId, string> = {
-	'general-liability': 'Claim Scenarios',
-	'professional-liability': 'Exposure Checklist',
-	'environmental-liability': 'Response Guide'
+	'environmental-liability': 'Response Guide',
+	'directors-officers-liability': 'Response Guide'
 };
 
 function toDocumentId(policyId: PolicyId, suffix: string) {

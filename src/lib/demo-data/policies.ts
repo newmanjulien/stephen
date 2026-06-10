@@ -2,29 +2,19 @@ import type { CategoryId } from './categories';
 import type { ExpertId } from './experts';
 
 export const POLICY_IDS = [
-	'general-liability-damage-to-rented-premises',
-	'general-liability-products-completed-operations',
-	'general-liability-contractual-liability',
-	'general-liability-personal-advertising-injury',
-	'professional-liability-negligent-misrepresentation',
-	'professional-liability-rectification-re-performance-costs',
 	'environmental-liability-cleanup-remediation-costs',
 	'environmental-liability-sudden-gradual-pollution',
-	'environmental-liability-natural-resource-damages'
+	'environmental-liability-natural-resource-damages',
+	'directors-officers-liability-social-engineering-fraud'
 ] as const;
 
 export type PolicyId = (typeof POLICY_IDS)[number];
 
 export type PolicyIconId =
-	| 'house'
-	| 'package'
-	| 'signature'
-	| 'megaphone'
-	| 'badge-alert'
-	| 'wrench'
 	| 'droplets'
 	| 'cloud-rain-wind'
-	| 'tree-pine';
+	| 'tree-pine'
+	| 'mail-warning';
 
 export type PolicyRecord = {
 	id: PolicyId;
@@ -35,44 +25,6 @@ export type PolicyRecord = {
 };
 
 export const POLICIES = {
-	'general-liability-damage-to-rented-premises': {
-		id: 'general-liability-damage-to-rented-premises',
-		categoryId: 'general-liability',
-		iconId: 'house',
-		title: 'Damage to Rented Premises',
-		expertId: 'leanne-thompson'
-	},
-	'general-liability-products-completed-operations': {
-		id: 'general-liability-products-completed-operations',
-		categoryId: 'general-liability',
-		iconId: 'package',
-		title: 'Products/Completed Operations',
-		expertId: 'leanne-thompson'
-	},
-	'general-liability-contractual-liability': {
-		id: 'general-liability-contractual-liability',
-		categoryId: 'general-liability',
-		iconId: 'signature',
-		title: 'Contractual Liability'
-	},
-	'general-liability-personal-advertising-injury': {
-		id: 'general-liability-personal-advertising-injury',
-		categoryId: 'general-liability',
-		iconId: 'megaphone',
-		title: 'Personal & Advertising Injury'
-	},
-	'professional-liability-negligent-misrepresentation': {
-		id: 'professional-liability-negligent-misrepresentation',
-		categoryId: 'professional-liability',
-		iconId: 'badge-alert',
-		title: 'Negligent Misrepresentation'
-	},
-	'professional-liability-rectification-re-performance-costs': {
-		id: 'professional-liability-rectification-re-performance-costs',
-		categoryId: 'professional-liability',
-		iconId: 'wrench',
-		title: 'Rectification / Re-Performance Costs'
-	},
 	'environmental-liability-cleanup-remediation-costs': {
 		id: 'environmental-liability-cleanup-remediation-costs',
 		categoryId: 'environmental-liability',
@@ -90,10 +42,16 @@ export const POLICIES = {
 		categoryId: 'environmental-liability',
 		iconId: 'tree-pine',
 		title: 'Natural Resource Damages'
+	},
+	'directors-officers-liability-social-engineering-fraud': {
+		id: 'directors-officers-liability-social-engineering-fraud',
+		categoryId: 'directors-officers-liability',
+		iconId: 'mail-warning',
+		title: 'Social Engineering Fraud'
 	}
 } as const satisfies Record<PolicyId, PolicyRecord>;
 
-export const DEFAULT_POLICY_ID: PolicyId = 'general-liability-damage-to-rented-premises';
+export const DEFAULT_POLICY_ID: PolicyId = 'environmental-liability-cleanup-remediation-costs';
 
 export function getPolicy(policyId: PolicyId): PolicyRecord {
 	return POLICIES[policyId];

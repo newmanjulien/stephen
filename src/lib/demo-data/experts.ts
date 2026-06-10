@@ -1,8 +1,6 @@
 export const EXPERT_IDS = [
-	'leanne-thompson',
-	'general-liability-specialist',
-	'professional-liability-specialist',
-	'environmental-liability-specialist'
+	'environmental-liability-specialist',
+	'directors-officers-liability-specialist'
 ] as const;
 
 export type ExpertId = (typeof EXPERT_IDS)[number];
@@ -15,29 +13,17 @@ export type ExpertRecord = {
 };
 
 export const EXPERTS = {
-	'leanne-thompson': {
-		id: 'leanne-thompson',
-		name: 'Leanne Thompson',
-		title: 'Senior Vice-President, Real Estate Leader',
-		avatar: '/avatars/thompson.webp'
-	},
-	'general-liability-specialist': {
-		id: 'general-liability-specialist',
-		name: 'Brad Cox',
-		title: 'National Practice Leader, General Liability',
-		avatar: '/avatars/cox.webp'
-	},
-	'professional-liability-specialist': {
-		id: 'professional-liability-specialist',
-		name: 'Andrew Torr',
-		title: 'Senior Vice-President, Professional Liability',
-		avatar: '/avatars/torr.webp'
-	},
 	'environmental-liability-specialist': {
 		id: 'environmental-liability-specialist',
 		name: 'Aaron Weinstock',
 		title: 'National Practice Leader, Environmental Liability',
 		avatar: '/avatars/weinstock.webp'
+	},
+	'directors-officers-liability-specialist': {
+		id: 'directors-officers-liability-specialist',
+		name: 'Brad Cox',
+		title: 'National Practice Leader, Transportation',
+		avatar: '/avatars/cox.webp'
 	}
 } as const satisfies Record<ExpertId, ExpertRecord>;
 

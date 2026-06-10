@@ -2,9 +2,8 @@ import type { ExpertId } from './experts';
 import type { PolicyId } from './policies';
 
 export const CATEGORY_IDS = [
-	'general-liability',
-	'professional-liability',
-	'environmental-liability'
+	'environmental-liability',
+	'directors-officers-liability'
 ] as const;
 
 export type CategoryId = (typeof CATEGORY_IDS)[number];
@@ -17,26 +16,6 @@ export type CategoryRecord = {
 };
 
 export const CATEGORIES = {
-	'general-liability': {
-		id: 'general-liability',
-		title: 'General Liability',
-		expertId: 'general-liability-specialist',
-		policyIds: [
-			'general-liability-damage-to-rented-premises',
-			'general-liability-products-completed-operations',
-			'general-liability-contractual-liability',
-			'general-liability-personal-advertising-injury'
-		]
-	},
-	'professional-liability': {
-		id: 'professional-liability',
-		title: 'Professional Liability',
-		expertId: 'professional-liability-specialist',
-		policyIds: [
-			'professional-liability-negligent-misrepresentation',
-			'professional-liability-rectification-re-performance-costs'
-		]
-	},
 	'environmental-liability': {
 		id: 'environmental-liability',
 		title: 'Environmental Liability',
@@ -46,6 +25,12 @@ export const CATEGORIES = {
 			'environmental-liability-sudden-gradual-pollution',
 			'environmental-liability-natural-resource-damages'
 		]
+	},
+	'directors-officers-liability': {
+		id: 'directors-officers-liability',
+		title: 'Directors & Officers Liability',
+		expertId: 'directors-officers-liability-specialist',
+		policyIds: ['directors-officers-liability-social-engineering-fraud']
 	}
 } as const satisfies Record<CategoryId, CategoryRecord>;
 
